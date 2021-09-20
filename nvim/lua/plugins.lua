@@ -11,9 +11,6 @@ return require('packer').startup(function()
     --+--- STATUS LINE ---+--
     use 'itchyny/lightline.vim'
 
-    --+--- START SCREEN ---+--
-    use 'mhinz/vim-startify'
-
     --+--- LPS ---+--
     use 'neovim/nvim-lspconfig'
     use 'nvim-lua/completion-nvim'
