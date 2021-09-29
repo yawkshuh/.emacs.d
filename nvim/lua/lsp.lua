@@ -2,7 +2,7 @@
 local lspconfig = require('lspconfig')
 local completion = require('completion')
 
-lspconfig.clangd.setup { on_attach = completion.on_attach } }
+lspconfig.clangd.setup { on_attach = completion.on_attach }
 lspconfig.rls.setup { on_attach = completion.on_attach }
 
 --+--- LSP related keymaps ---+--
