@@ -34,6 +34,8 @@ bo.shiftwidth = 4
 bo.expandtab = true
 bo.smartindent = true
 
+vim.cmd[[autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab smartindent ]]
+
 -- Don't wrap if text exceeds screen width
 wo.wrap = false
 

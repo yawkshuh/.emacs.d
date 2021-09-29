@@ -5,8 +5,9 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     --+--- THEMES ---+--
-	use 'gruvbox-community/gruvbox'
+    use 'gruvbox-community/gruvbox'
     use 'jhlgns/naysayer88.vim'
+    use 'tiagovla/tokyodark.nvim'
 
     --+--- STATUS LINE ---+--
     use 'itchyny/lightline.vim'
