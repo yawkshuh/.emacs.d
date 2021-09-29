@@ -14,7 +14,7 @@
    '("3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" "d14f3df28603e9517eb8fb7518b662d653b25b26e83bd8e129acea042b774298" default))
  '(display-line-numbers-type 'relative)
  '(global-display-line-numbers-mode t)
- '(package-selected-packages '(zenburn-theme gruvbox-theme))
+ '(package-selected-packages '(ido-completing-read+ zenburn-theme gruvbox-theme))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -37,9 +37,14 @@
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
-
 ;; (load-theme 'gruvbox)
 (load-theme 'zenburn)
+
+(ido-mode 1)
+(ido-everywhere 1)
+(require 'ido-completing-read+)
+(ido-ubiquitous-mode 1)
+
 
 ;;(set-frame-parameter (selected-frame) 'alpha '(90 . 75))
 ;;(add-to-list 'default-frame-alist '(alpha . (90 . 75)))
