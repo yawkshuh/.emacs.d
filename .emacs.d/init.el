@@ -33,7 +33,8 @@
 
 (setq inhibit-startup-screen t)
 (setq visible-bell 1)
- 
+(setq ring-bell-function 'ignore) 
+
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
