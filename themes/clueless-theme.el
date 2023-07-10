@@ -11,28 +11,28 @@
 
 (deftheme clueless "Clueless color theme")
 
-(let ((background "#062626")
+(let ((background "#072626")
       (gutters    "#062329")
       (gutter-fg  "#062329")
       (gutters-active "#062329")
       (builtin      "#ffffff")
       (selection  "#0000ff")
-      (text       "#d1b897")
-      (comments   "#6cc16c")
+      (text       "#d3b58d")
+      (comments   "#3fdf1f")
       (punctuation "#8cde94")
       (keywords "#ffffff")
-      (variables "#c1d1e3")
+      (variables "#c8d4ec")
       (functions "#ffffff")
       (methods    "#c1d1e3")
-      (strings    "#2ec09c")
+      (strings    "#0fdfaf")
       (constants "#7ad0c6")
       (macros "#8cde94")
       (numbers "#7ad0c6")
       (white     "#ffffff")
-      (error "#ff0000")
-      (warning "#ffaa00")
+      (warning "#504038")
       (highlight-line "#0b3335")
-      (line-fg "#126367"))
+      (line-fg "#126367")
+	  (cursor "lightgreen"))
 
   (custom-theme-set-faces
    'clueless
@@ -42,10 +42,10 @@
 
    `(default                          ((t (:foreground ,text :background ,background, :weight normal))))
    `(region                           ((t (:foreground nil :background ,selection))))
-   `(cursor                           ((t (:background ,"#89df82"))))
+   `(cursor                           ((t (:background ,cursor))))
    `(fringe                           ((t (:background ,background   :foreground ,white))))
    `(linum                            ((t (:background ,background :foreground ,gutter-fg))))
-   `(highlight ((t (:foreground nil :background ,selection))))
+   `(highlight                        ((t (:foreground "navyblue" :background "darkseagreen2"))))
 
    ;; Font lock faces
    ;; *****************************************************************************
