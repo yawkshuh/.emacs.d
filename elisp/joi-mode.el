@@ -27,7 +27,7 @@
 	table))
 
 (defconst joi-keywords
-  '("if" "else" "for" "return" "struct" "enum"))
+  '("if" "else" "for" "while" "return" "struct" "enum"))
 
 (defconst joi-builtins
   '("print"))
@@ -36,7 +36,7 @@
   '("true" "false"))
 
 (defconst joi-typenames
-  '("int" "float" "string"))
+  '("int" "float" "string" "bool"))
 
 (defun joi-wrap-word-rx (s)
   (concat "\\<" s "\\>"))
@@ -76,6 +76,23 @@
 (defalias 'joi-parent-mode
   (if (fboundp 'prog-mode) 'prog-mode 'fundamental-mode))
 
+;; imenu hookup
+(add-hook 'joi-mode-hook
+		  (lambda ()
+			(setq imenu-generic-expression
+				  '(("type" "^\\(.*:*.*\\) : " 1)
+					("function" "^\\(.*\\) :: " 1)
+					("struct" "^\\(.*\\) *:: *\\(struct\\)\\(.*\\){" 1)))))
+
+(defun joi--indent-on-parenthesis ()
+  (when (and (= (char-syntax (char-before)) ?\))
+			 (= (save-excursion (back-to-indentation) (point)) (1- (point))))
+   (js-indent-line)))
+
+(defun joi--add-self-insert-hooks ()
+  (add-hook 'post-self-insert-hook
+			'joi--indent-on-parenthesis))
+
 ;;;###autoload
 (define-derived-mode joi-mode joi-parent-mode "Joi"
   :syntax-table joi-mode-syntax-table
@@ -89,6 +106,9 @@
   (setq-local block-comment-end "*/")
   (setq-local indent-line-function 'js-indent-line)
   (setq-local font-lock-defaults '(joi-font-lock-defaults))
+
+  ;; Add indent functionality on parenthesis.
+  (joi--add-self-insert-hooks)
 
   (font-lock-ensure))
 
