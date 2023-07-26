@@ -91,8 +91,8 @@
 
    `(mode-line-inactive ((t (:inverse-video unspecified
                                             :underline unspecified
-                                            :foreground ,text
-                                            :background ,background
+                                            :foreground "black"
+                                            :background "#cccccc"
                                             :box nil))))
    `(powerline-inactive1 ((t (:background ,background :foreground ,text))))
    `(powerline-inactive2 ((t (:background ,background :foreground ,text))))
