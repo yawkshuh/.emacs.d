@@ -34,6 +34,7 @@
 (global-unset-key [?\C-x ?m])
 (global-set-key [?\C-x ?m] 'blink-matching-open)
 
+(global-set-key [C-return] 'save-buffer)
 
 (add-to-list 'load-path "~/.emacs.d/elisp")
 (require 'joi-mode)
