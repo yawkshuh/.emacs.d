@@ -36,7 +36,7 @@
    'handmade
 
    ;; Default colors
-   `(default ((t (:foreground ,foreground :background ,background :weight normal :family "Liberation Mono"))))
+   `(default ((t (:foreground ,foreground :background ,background))))
    `(cursor  ((t (:background ,cursor))))
    `(fringe  ((t (:background ,background :foreground ,white))))
 

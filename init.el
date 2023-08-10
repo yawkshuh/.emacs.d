@@ -14,15 +14,33 @@
 (setq-default c-basic-offset 4)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'handmade t)
+(load-theme 'clueless t)
+
+(set-frame-font "Consolas 12" nil t)
 
 (split-window-horizontally)
+(setq split-window-preferred-function nil)
+
 (setq default-directory "~/")
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+;; (w32-send-sys-command 61488)
+
+(global-auto-revert-mode t)
+
+(global-set-key [?\C-,] 'beginning-of-buffer)
+(global-set-key [?\C-.] 'end-of-buffer)
+
+(global-unset-key [?\C-x ?m])
+(global-set-key [?\C-x ?m] 'blink-matching-open)
+
 
 (add-to-list 'load-path "~/.emacs.d/elisp")
 (require 'joi-mode)
+
+;; Ido Mode (Minibuffer Completions)
+(require 'ido)
+(ido-mode t)
 
 ;; C / C++ Automatic Header
 (defun clueless-c-hook ()
@@ -71,8 +89,3 @@
 )
 
 (add-hook 'c-mode-common-hook 'clueless-c-hook)
-
-
-;; Ido Mode (Minibuffer Completions)
-(require 'ido)
-(ido-mode t)
