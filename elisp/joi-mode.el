@@ -30,13 +30,15 @@
   '("if" "else" "for" "while" "return" "struct" "enum"))
 
 (defconst joi-builtins
-  '("print"))
+  '())
 
 (defconst joi-constants
   '("true" "false"))
 
 (defconst joi-typenames
-  '("int" "float" "string" "bool"))
+  '("int"  "i8" "i16" "i32" "i64"
+	"uint" "u8" "u16" "u32" "u64"
+	"f32" "f64" "bool" "string"))
 
 (defun joi-wrap-word-rx (s)
   (concat "\\<" s "\\>"))
@@ -63,6 +65,8 @@
 	
 	;; Constants
 	(,(joi-keywords-rx joi-constants) 1 font-lock-constant-face)
+
+	("#\\w+" . font-lock-preprocessor-face)
 
 	;; Strings
 	("\\\".*\\\"" . font-lock-string-face)
