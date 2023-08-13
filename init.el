@@ -36,6 +36,10 @@
 
 (global-set-key [C-return] 'save-buffer)
 
+(global-set-key "\M-F" 'find-file-other-window)
+(global-set-key "\M-B" 'ido-switch-buffer-other-window)
+(global-set-key "\M-W" 'other-window)
+
 (add-to-list 'load-path "~/.emacs.d/elisp")
 (require 'joi-mode)
 
