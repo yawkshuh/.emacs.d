@@ -27,7 +27,7 @@
 	table))
 
 (defconst joi-keywords
-  '("if" "else" "for" "while" "return" "struct" "enum"))
+  '("if" "else" "for" "while" "return" "struct" "enum" "defer"))
 
 (defconst joi-builtins
   '())
