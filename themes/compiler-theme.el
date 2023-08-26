@@ -13,7 +13,7 @@
 (deftheme compiler "Compiler Theme")
 
 (let ((background "#292929")
-	  (foreground "#c9b399")
+	  (foreground "#d5b489")
 	  (cursor     "#88df8e")
 	  (selection  "#f7879a") ;; Mark selection
 	  (variables  "#f5f5f5") ;; Shared across variables, functions and keywords.

@@ -1,7 +1,7 @@
-;;; clueless-theme.el
+;;; jblow-theme.el
 
 ;; Author: Riccardo Berbeglia
-;; Filename: clueless-theme.el
+;; Filename: jblow-theme.el
 ;; Package-Requires: ((emacs "24"))
 
 ;; Dark green blue color scheme with tan colors. Inspired by Jonathan Blow's compiler livestreams.
@@ -9,7 +9,7 @@
 (unless (>= emacs-major-version 24)
   (error "This theme requires Emacs 24 or later!"))
 
-(deftheme clueless "Clueless color theme")
+(deftheme jblow "jblow color theme")
 
 (let ((background     "#072626")
 	  (background-alt "#042328") ;; In some livestreams it looks more like this.
@@ -36,7 +36,7 @@
 	  (cursor         "lightgreen"))
 
   (custom-theme-set-faces
-   'clueless
+   'jblow
 
    ;; Default colors
    ;; *****************************************************************************
@@ -102,5 +102,5 @@
   )
 )
 
-(provide-theme 'clueless)
-(provide 'clueless-theme)
+(provide-theme 'jblow)
+(provide 'jblow-theme)
