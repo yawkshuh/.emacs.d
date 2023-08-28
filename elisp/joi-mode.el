@@ -18,6 +18,16 @@
 	(modify-syntax-entry ?< "." table)
 	(modify-syntax-entry ?= "." table)
 
+	(modify-syntax-entry ?! "." table)
+	(modify-syntax-entry ?$ "." table)
+	(modify-syntax-entry ?^ "." table)
+	(modify-syntax-entry ?% "." table)
+	(modify-syntax-entry ?& "." table)
+	(modify-syntax-entry ?| "." table)
+	(modify-syntax-entry ?~ "." table)
+	(modify-syntax-entry ?. "." table)
+	(modify-syntax-entry ?, "." table)
+
 	;; Modify some syntax entries to allow nested block comments
 	(modify-syntax-entry ?/ ". 124b" table)
 	(modify-syntax-entry ?* ". 23n" table)
@@ -27,18 +37,21 @@
 	table))
 
 (defconst joi-keywords
-  '("if" "else" "for" "while" "return" "struct" "enum" "defer"))
+  '("if" "else" "case"
+	"for" "break" "continue"
+	"defer" "return"
+	"struct" "union" "enum"))
 
 (defconst joi-builtins
-  '())
+  '("cast"))
 
 (defconst joi-constants
   '("true" "false"))
 
 (defconst joi-typenames
-  '("int"  "i8" "i16" "i32" "i64"
+  '("int"  "s8" "s16" "s32" "s64"
 	"uint" "u8" "u16" "u32" "u64"
-	"f32" "f64" "bool" "string"))
+	"f32" "f64" "b32" "string"))
 
 (defun joi-wrap-word-rx (s)
   (concat "\\<" s "\\>"))
