@@ -12,11 +12,13 @@
 
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
+(c-set-offset 'case-label '+) ;; Indent "case" labels.
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'compiler t)
+(load-theme 'jblow t)
+(set-background-color "#0d383d")
 
-(set-frame-font "Consolas 12" nil t)
+(set-frame-font "Consolas 14" nil t)
 
 (split-window-horizontally)
 (setq split-window-preferred-function nil)
@@ -45,7 +47,7 @@
 
 ;; Ido Mode (Minibuffer Completions)
 (require 'ido)
-(ido-mode t)
+;; (ido-mode t)
 
 ;; C / C++ Automatic Header
 (defun clueless-c-hook ()
