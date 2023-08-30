@@ -40,7 +40,8 @@
   '("if" "else" "case"
 	"for" "break" "continue"
 	"defer" "return"
-	"struct" "union" "enum"))
+	"struct" "union" "enum"
+	"proc"))
 
 (defconst joi-builtins
   '("cast"))
