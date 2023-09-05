@@ -50,6 +50,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/elisp")
 (require 'joi-mode)
+(require 'odin-mode)
 
 ;; Ido Mode (Minibuffer Completions)
 (require 'ido)
