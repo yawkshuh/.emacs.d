@@ -6,6 +6,9 @@
 ;; (scroll-bar-mode 0)
 (set-fringe-mode 0)
 
+;; Use UNIX style line endings.
+(setq-default buffer-file-coding-system 'unix)
+
 (setq inhibit-startup-screen t)
 (setq visible-bell 1)
 (setq ring-bell-function 'ignore) 
