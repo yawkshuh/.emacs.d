@@ -11,8 +11,8 @@
 
 (deftheme jblow "jblow color theme")
 
-(let ((background     "#072626")
-	  (background-alt "#042328") ;; In some livestreams it looks more like this.
+(let ((background     "#072626") 
+	  (background-alt "#042328") ;; #092a25 (#092a23) is also another one.
       (gutters        "#062329")
       (gutter-fg      "#062329")
       (gutters-active "#062329")

@@ -14,15 +14,15 @@
 (setq ring-bell-function 'ignore) 
 
 (setq initial-major-mode 'fundamental-mode)
-(setq initial-scratch-message "There's nothing more powerful than imagination. It can shape the\nfabric of reality, transforming everything you may think you know.\n")
+(setq initial-scratch-message "")
 
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
 (c-set-offset 'case-label '+) ;; Indent "case" labels.
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'compiler t)
-;; (set-background-color "#0d383d")
+(load-theme 'jblow t)
+(set-background-color "#092a25")
 
 (set-frame-font "Consolas 12" nil t)
 
@@ -103,3 +103,28 @@
 )
 
 (add-hook 'c-mode-common-hook 'clueless-c-hook)
+
+;; SUBED
+
+(add-to-list 'load-path "~/.emacs.d/elisp/subed/subed")
+(require 'subed-autoloads)
+
+(with-eval-after-load 'subed-mode
+	;; Remember cursor position between sessions
+	(add-hook 'subed-mode-hook 'save-place-local-mode)
+	;; Break lines automatically while typing
+	(add-hook 'subed-mode-hook 'turn-on-auto-fill)
+	;; Break lines at 40 characters
+	(add-hook 'subed-mode-hook (lambda () (setq-local fill-column 40)))
+	;; Some reasonable defaults
+	(add-hook 'subed-mode-hook 'subed-enable-pause-while-typing)
+	;; As the player moves, update the point to show the current subtitle
+	(add-hook 'subed-mode-hook 'subed-enable-sync-point-to-player)
+	;; As your point moves in Emacs, update the player to start at the current subtitle
+	(add-hook 'subed-mode-hook 'subed-enable-sync-player-to-point)
+	;; Replay subtitles as you adjust their start or stop time with M-[, M-], M-{, or M-}
+	(add-hook 'subed-mode-hook 'subed-enable-replay-adjusted-subtitle)
+	;; Loop over subtitles
+	(add-hook 'subed-mode-hook 'subed-enable-loop-over-current-subtitle)
+	;; Show characters per second
+	(add-hook 'subed-mode-hook 'subed-enable-show-cps))
